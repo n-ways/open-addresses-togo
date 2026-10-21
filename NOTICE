@@ -1,0 +1,24 @@
+N-Ways Addressing for Togo, © N-WAYS LIMITED (nways.ng)
+https://github.com/n-ways/open-addresses-togo
+
+This product includes software developed by N-WAYS LIMITED: Togo's addressing
+engine, registry server and tools (engine/, server/, tools/), licensed under the
+Apache License, Version 2.0 (LICENSE).
+
+Any redistribution or derivative work of the code, in source or binary form,
+must keep this NOTICE and show the credit line
+
+    N-Ways Addressing for Togo, © N-WAYS LIMITED (nways.ng)
+
+in its documentation, its "about", credits or licences screen, or wherever
+such third-party notices normally appear (Apache License 2.0, section 4(d)).
+
+The data (registry/, model/, engine/data/) is licensed separately under ODbL 1.0
+(LICENSE-DATA) and the documents (docs/) under CC BY 4.0 (LICENSE-DOCS). See
+LICENSING.md for how to credit each.
+
+The Hilbert-curve order follows D. Hilbert (1891); the check digit is H. M. Damm's
+algorithm (2004). Spot codes are N-Ways' own grid of 1/32,768 degree in base 20; the cards
+also show the gate's Plus Code (Open Location Code, Apache 2.0 specification by Google).
+The national outline and the area seeds are derived from OpenStreetMap
+(© OpenStreetMap contributors, ODbL).

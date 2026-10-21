@@ -1,0 +1,24 @@
+% Shared look of the paper's figures: Libertinus Sans, the paper's colours, and \T{English}{French}.
+\ProvidesPackage{common}
+\RequirePackage{fontspec}
+\setmainfont{LibertinusSans}[Extension=.otf,UprightFont=*-Regular,BoldFont=*-Bold,ItalicFont=*-Italic]
+\RequirePackage{unicode-math}
+\setmathfont{LibertinusMath-Regular.otf}
+\RequirePackage{pgfplots}
+\RequirePackage{pgfplotstable}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{lindenmayersystems,patterns,calc}
+\usepgfplotslibrary{colormaps}
+\definecolor{ink}{HTML}{006A4E}
+\definecolor{inklight}{HTML}{CFE6DD}
+\definecolor{gold}{HTML}{E0A800}
+\definecolor{flagred}{HTML}{D21034}
+\definecolor{slate}{HTML}{5B6770}
+\definecolor{grid}{HTML}{D9DEE2}
+\pgfplotsset{colormap={togo}{rgb255=(236,244,240) rgb255=(150,200,178) rgb255=(0,106,78) rgb255=(0,52,38)}}
+\pgfkeys{/pgf/number format/.cd, 1000 sep={\,}}
+\pgfplotsset{every axis/.append style={font=\small, tick label style={font=\footnotesize},
+  label style={font=\small}, axis line style={slate}, tick style={slate}}}
+\ifx\figlang\undefined\def\figlang{en}\fi
+\def\figlangen{en}
+\newcommand{\T}[2]{\ifx\figlang\figlangen #1\else #2\fi}

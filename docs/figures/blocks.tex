@@ -1,0 +1,49 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{common}
+\pgfplotstableread{blocks.dat}\blocks
+\begin{document}
+\begin{tikzpicture}[font=\footnotesize]
+\def\W{12}
+% the three number lines: Lom-Nava 1000-9999, Lom-Nava 10000-99999, Tokpo 1000-9999
+\foreach \r/\lab/\lo/\hi in {0/{Lom-Nava, 1000--9999}/1000/9999, 1/{Lom-Nava, 10000--99999}/10000/99999, 2/{Tokpo, 1000--9999}/1000/9999} {
+  \pgfmathsetmacro{\y}{-2.3*\r}
+  \draw[grid, fill=white] (0,\y-0.25) rectangle (\W,\y+0.25);
+  \node[anchor=south west, font=\small\bfseries, ink] at (0,\y+0.85) {\lab};
+  \node[anchor=north, slate, font=\scriptsize] at (0,\y-0.27) {\lo};
+  \node[anchor=north, slate, font=\scriptsize] at (\W,\y-0.27) {\hi};
+}
+\pgfplotstablegetrowsof{\blocks}\pgfmathtruncatemacro{\nrows}{\pgfplotsretval-1}
+\foreach \i in {0,...,\nrows} {
+  \pgfplotstablegetelem{\i}{row}\of\blocks \let\r\pgfplotsretval
+  \pgfplotstablegetelem{\i}{part}\of\blocks \let\part\pgfplotsretval
+  \pgfplotstablegetelem{\i}{alt}\of\blocks \let\alt\pgfplotsretval
+  \pgfplotstablegetelem{\i}{prefecture}\of\blocks \let\pref\pgfplotsretval
+  \pgfplotstablegetelem{\i}{compounds}\of\blocks \let\c\pgfplotsretval
+  \pgfplotstablegetelem{\i}{lo}\of\blocks \let\lo\pgfplotsretval
+  \pgfplotstablegetelem{\i}{hi}\of\blocks \let\hi\pgfplotsretval
+  \pgfplotstablegetelem{\i}{last}\of\blocks \let\last\pgfplotsretval
+  \pgfplotstablegetelem{\i}{tail}\of\blocks \let\tail\pgfplotsretval
+  \ifnum\part=4 \def\base{1000}\def\span{9000}\else \def\base{10000}\def\span{90000}\fi
+  \pgfmathsetmacro{\y}{-2.3*\r}
+  \pgfkeys{/pgf/fpu=true, /pgf/fpu/output format=fixed}
+  \pgfmathsetmacro{\xa}{(\lo-\base)/\span*\W}
+  \pgfmathsetmacro{\xb}{(\hi+1-\base)/\span*\W}
+  \pgfmathsetmacro{\xl}{(\last+1-\base)/\span*\W}
+  \pgfmathsetmacro{\xt}{(\tail-\base)/\span*\W}
+  \pgfkeys{/pgf/fpu=false}
+  \fill[inklight] (\xa,\y-0.25) rectangle (\xb,\y+0.25);
+  \fill[ink] (\xa,\y-0.25) rectangle (\xl,\y+0.25);
+  \fill[pattern=north east lines, pattern color=gold!90!black] (\xt,\y-0.25) rectangle (\xb,\y+0.25);
+  \draw[white, line width=0.8pt] (\xa,\y-0.25) -- (\xa,\y+0.25);
+  \pgfmathsetmacro{\xm}{(\xa+\xb)/2}
+  \ifnum\alt=0 \def\ly{0.32}\else \def\ly{0.62}\fi
+  \node[anchor=south, inner sep=1pt] at (\xm,\y+\ly) {\pref\ (\c)};
+}
+% key
+\begin{scope}[shift={(0,-6.0)}]
+  \fill[ink] (0,0) rectangle (0.5,0.25); \node[anchor=west] at (0.55,0.125) {\T{numbers given at first issue}{numéros attribués à la première émission}};
+  \fill[inklight] (0,-0.45) rectangle (0.5,-0.2); \node[anchor=west] at (0.55,-0.325) {\T{free for new homes}{libres pour les nouvelles maisons}};
+  \fill[pattern=north east lines, pattern color=gold!90!black] (0,-0.9) rectangle (0.5,-0.65); \node[anchor=west] at (0.55,-0.775) {\T{tail reserve}{réserve de queue}};
+\end{scope}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,95 @@
+{
+ "placeKinds": [
+  "village",
+  "hamlet",
+  "quarter",
+  "neighbourhood",
+  "suburb",
+  "town",
+  "city",
+  "locality"
+ ],
+ "placePoints": 1804,
+ "areasWithBuildings": 1773,
+ "compoundRatio": 0.79,
+ "estCompounds": 3026624,
+ "compoundsPerArea": {
+  "p10": 95,
+  "p50": 814,
+  "p90": 3950,
+  "p99": 15452,
+  "max": 37983
+ },
+ "areasByDigits": {
+  "3": 615,
+  "4": 1012,
+  "5": 146
+ },
+ "compoundShareByDigits": {
+  "3": 0.04,
+  "4": 0.524,
+  "5": 0.436
+ },
+ "largest": [
+  [
+   "Agovémé",
+   "quarter",
+   37983
+  ],
+  [
+   "Sokodé",
+   "city",
+   35676
+  ],
+  [
+   "Sagbado",
+   "village",
+   32777
+  ],
+  [
+   "Agoè-Démakpoè",
+   "suburb",
+   32714
+  ],
+  [
+   "Sanguera",
+   "village",
+   30131
+  ],
+  [
+   "Minamadou",
+   "quarter",
+   27603
+  ],
+  [
+   "Vakpossito",
+   "suburb",
+   24048
+  ],
+  [
+   "Klémé",
+   "neighbourhood",
+   22768
+  ],
+  [
+   "Agondavi",
+   "village",
+   21464
+  ],
+  [
+   "Kohe",
+   "village",
+   20516
+  ],
+  [
+   "Tsévié",
+   "city",
+   20256
+  ],
+  [
+   "Dapaong",
+   "city",
+   19466
+  ]
+ ]
+}

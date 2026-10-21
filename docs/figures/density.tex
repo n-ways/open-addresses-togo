@@ -1,0 +1,24 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{common}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[x=1.7cm, y=1.7cm, xmin=-0.2, xmax=1.9, ymin=6.0, ymax=11.2,
+  axis lines=box, xtick={0,0.5,1,1.5}, ytick={6,7,8,9,10,11},
+  xticklabel={$\pgfmathprintnumber{\tick}^\circ$}, yticklabel={$\pgfmathprintnumber{\tick}^\circ$},
+  xlabel={\T{Longitude (E)}{Longitude (E)}}, ylabel={\T{Latitude (N)}{Latitude (N)}},
+  colormap name=togo, point meta min=0, point meta max=4,
+  colorbar, colorbar style={width=2.5mm, ytick={0,1,2,3,4}, yticklabels={1,10,100,1000,10000},
+    ylabel={\T{compounds per cell}{concessions par maille}}, ylabel style={font=\footnotesize}},
+  unbounded coords=jump, clip mode=individual]
+\addplot[scatter, only marks, mark=square*, mark size=1.0pt, scatter src=explicit,
+  scatter/use mapped color={draw=mapped color, fill=mapped color}]
+  table[x=lon, y=lat, meta=logn] {density.dat};
+\addplot[white, line width=0.9pt] table[x=lon, y=lat] {regions.dat};
+\addplot[black!85, line width=0.4pt] table[x=lon, y=lat] {regions.dat};
+\addplot[only marks, mark=*, mark size=1.1pt, fill=flagred, draw=white,
+  nodes near coords, point meta=explicit symbolic,
+  every node near coord/.style={anchor=west, font=\scriptsize, fill=white, fill opacity=0.75, text opacity=1, inner sep=1pt}]
+  table[x=lon, y=lat, meta=name] {towns.dat};
+\end{axis}
+\end{tikzpicture}
+\end{document}

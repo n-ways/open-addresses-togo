@@ -1,0 +1,18 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{common}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[width=11.5cm, height=6.4cm, xbar stacked, bar width=10pt, xmin=0, xmax=100,
+  ytick={0,...,5}, yticklabels from table={sources.dat}{region}, y dir=reverse, ymin=-0.6, ymax=5.6,
+  xlabel={\T{share of the region's compounds (\%)}{part des concessions de la région (\%)}},
+  xmajorgrids, grid style={grid}, axis x line*=bottom, axis y line*=left, y axis line style={draw=none},
+  ytick style={draw=none}, legend style={draw=none, fill=white, fill opacity=0.85, text opacity=1, at={(0.5,1.03)}, anchor=south, font=\footnotesize, legend columns=2},
+  legend cell align=left,
+  nodes near coords={\pgfmathprintnumber[fixed, precision=0]{\pgfplotspointmeta}},
+  every node near coord/.append style={font=\scriptsize, white}, point meta=explicit]
+\addplot[fill=ink, draw=none] table[y=i, x expr=100*\thisrow{four}/\thisrow{compounds}, meta expr=100*\thisrow{four}/\thisrow{compounds}] {sources.dat};
+\addplot[fill=gold, draw=none, every node near coord/.append style={black}] table[y=i, x expr=100*\thisrow{five}/\thisrow{compounds}, meta expr=100*\thisrow{five}/\thisrow{compounds}] {sources.dat};
+\legend{\T{four-digit numbers}{numéros à quatre chiffres}, \T{five-digit numbers}{numéros à cinq chiffres}}
+\end{axis}
+\end{tikzpicture}
+\end{document}

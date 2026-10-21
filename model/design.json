@@ -1,0 +1,692 @@
+{
+  "country": "TG",
+  "name": "Adresse N-Ways Togo",
+  "status": "issued 20 October 2026: 2,768,053 codes, one for every compound; register frozen",
+  "date": "2026-10-20",
+  "engine": "engine/reference/tg_engine.py and plate_names.py (Togo's own engine); specification engine/SPEC.md; registry server server/",
+  "existingSystems": {
+    "postalCodes": "none (UPU sheet 03/2005; SPT P.O. boxes 'B.P. 526 LOME', '01 BP 2274 Lomé 01'; PostMap postal-code format unpublished)",
+    "streetAddressing": "former commune of Lomé since 1997: street code = number + quartier code ('165 AMT'); Grand Lomé modernisation by DAGL + Edenmap (Dec 2025): coded/named streets, metric entrance numbers, ~500,000 addresses, not yet live",
+    "verdict": "no postal codes; a door-level system being rolled out in Grand Lomé by the DAGL (format unpublished)",
+    "rule": "the State's address first wherever one exists (Lomé's streets now, the DAGL's entrance addresses when released), the N-Ways code beside it; point to SPT boxes; never call N-Ways codes postcodes or official addresses"
+  },
+  "criteria": [
+    "1. easy to remember and to get: place word + 4 digits in pairs; nothing else to learn",
+    "1b. unique nationally on its own: 'Name NNNN' decodes to one compound in all Togo, with no préfecture, position or other context",
+    "2. compound (plot) is the addressable unit, gate is the primary entrance",
+    "3. stable: codes never move or get reused; areas frozen at first issue",
+    "4. official addresses first: the State's address is shown first wherever one exists (Lomé's streets, the DAGL's addresses when released); every compound also has its N-Ways code",
+    "5. offline: spot codes computed on the phone; registry cached per area",
+    "6. privacy: codes describe places, never people"
+  ],
+  "forms": {
+    "remembered": {
+      "form": "<plate name (<= 12 characters, <= 2 words)> <number in pairs>  e.g. 'Kara 24 17', 'Fréau-Jardin 10 58', 'Zongo 1 41 98'",
+      "withOfficialAddress": "in the former commune of Lomé the official street is shown first ('Rue Mission Tové, Lomé'), then the code; a DAGL address once released",
+      "rules": "no letters to learn beyond a place name; number grouped in pairs from the right ('1 41 98'); unique nationally on its own (nationalNames); no check digit for people (a system may send it after a dash: 'Kamina 54 00-8')"
+    },
+    "spoken": {
+      "fr": "'Kara, vingt-quatre, dix-sept'",
+      "ee": "Ewe speakers switch to French for long numbers; a recorded Ewe reading is future work",
+      "kbp": "Kabiyè speakers switch to French for long numbers; a recorded Kabiyè reading is future work"
+    },
+    "machine": "TG-<area key>-<number>-<Damm check>[.<structure>][/<entrance>]  e.g. 'TG-KOZ0604-2417-7', 'TG-KOZ0604-2417-7.2', 'TG-KOZ0604-2417-7/2'",
+    "plate": "large remembered form (no check digit), the official address first where one exists, QR https://nways.ng/a/<machine form>",
+    "notConfusableWith": "Lomé street codes (number first, 1-3 digits: '165 AMT', '46BE', '13.QAD'); the parser recognises and labels them"
+  },
+  "optionsEvaluated": [
+    {
+      "option": "préfecture + 5 alphanumeric",
+      "example": "ZIO 7HK2X",
+      "why": "Zio 278,637 buildings -> 5 base-20 chars",
+      "rejected": "hard to memorise; letters read differently in French, Ewe, Kabiyè"
+    },
+    {
+      "option": "digits only, national",
+      "example": "4817229",
+      "why": "2.77 M compounds x 2 -> 7 digits",
+      "rejected": "no place cue; a typo lands anywhere"
+    },
+    {
+      "option": "place word + 4 digits",
+      "example": "Kara 24 17",
+      "why": "1,251 of the 1,379 areas take 4 digits with national name ranges",
+      "chosen": true
+    }
+  ],
+  "codeAreas": {
+    "file": "model/areas/areas.json (built by tools/build_areas.py)",
+    "kinds": [
+      {
+        "kind": "lome-quartier",
+        "count": 69,
+        "numbered": 69,
+        "key": "quartier code (OSM admin_level=10 ref), e.g. AMT, BE, FRJ, TKL",
+        "source": "OpenStreetMap (ODbL)",
+        "officialSystem": "DAGL - adressage du Grand Lomé"
+      },
+      {
+        "kind": "canton",
+        "count": 373,
+        "numbered": 215,
+        "key": "<préfecture 3 letters><last 2 digits of HDX p-code>, e.g. KOZ14; LOM01 (Lomé Commune) contains the 69 quartiers",
+        "rule": "numbered when kept whole; a canton too big for its block is split into named-place cells and becomes their container (158, LOM01 included)",
+        "source": "HDX COD-AB Togo admin3, valid_on 2021-01-07 (CC BY-IGO)"
+      },
+      {
+        "kind": "cell",
+        "count": 1095,
+        "numbered": 1095,
+        "key": "<canton key><2 digits>, e.g. KOZ0604 (Kara)",
+        "rule": "nearest OSM named place inside the canton"
+      }
+    ],
+    "prefectureKeys": {
+      "Agoe-Nyive": "AGN",
+      "Agou": "AGO",
+      "Akebou": "AKB",
+      "Amou": "AMO",
+      "Anie": "ANI",
+      "Assoli": "ASS",
+      "Ave": "AVE",
+      "Bas-Mono": "BMO",
+      "Bassar": "BAS",
+      "Binah": "BIN",
+      "Blitta": "BLI",
+      "Cinkasse": "CIN",
+      "Dankpen": "DAN",
+      "Danyi": "DNY",
+      "Doufelgou": "DOU",
+      "Est-Mono": "EMO",
+      "Golfe": "GOL",
+      "Haho": "HAH",
+      "Keran": "KER",
+      "Kloto": "KLO",
+      "Kozah": "KOZ",
+      "Kpele": "KPE",
+      "Kpendjal": "KPD",
+      "Lacs": "LAC",
+      "Lome Commune": "LOM",
+      "Moyen-Mono": "MMO",
+      "Naki-Ouest": "NKO",
+      "Ogou": "OGO",
+      "Oti": "OTI",
+      "Oti-Sud": "OTS",
+      "Plaine du Mo": "PMO",
+      "Sotouboua": "SOT",
+      "Tandjoare": "TDJ",
+      "Tchamba": "TCB",
+      "Tchaoudjo": "TCH",
+      "Tone": "TON",
+      "Vo": "VOG",
+      "Wawa": "WAW",
+      "Yoto": "YOT",
+      "Zio": "ZIO"
+    },
+    "index": "frozen integer per area: quartiers 1-69, cantons 101+, cells 1001+; appended only",
+    "frozen": "polygon, key and index never change after first issue; renames only add aliases",
+    "communes": "attribute only (117 communes, no open boundaries)"
+  },
+  "numbers": {
+    "lengths": [
+      4,
+      5
+    ],
+    "ranges": {
+      "4": [
+        1000,
+        9999
+      ],
+      "5": [
+        10000,
+        99999
+      ],
+      "note": "per name: every name key owns both parts; each area gets a block in one of them (nationalNames)"
+    },
+    "capacityRule": "block = estimated (at issue: real) compounds x 2, rounded up to 100, >= 200; 4 digits while the block fits in the name's 4-digit part, else 5 digits",
+    "compoundEstimate": "before issue: structures x 0.79 (Grand Lomé, model/stats/capital-stats.json); blocks were then sized on the real compounds",
+    "firstIssue": "compounds sorted along a Hilbert curve (order 16) over the area box; step s = floor(block size / (N x 1.5)) from the block's first number, s-1 free numbers after each; top third of the block = tail reserve",
+    "newCompound": "free number between Hilbert neighbours closest to the midpoint, else lowest free tail-reserve number, else the area's extra blocks, else a new block from the name's free space",
+    "never": "reuse a number; issue 1-3 digit numbers; use a leading zero",
+    "lifecycle": {
+      "demolished": "retired",
+      "split": "part with the gate keeps the code; other part gets a new number",
+      "merged": "older code survives, other becomes alias"
+    },
+    "today": {
+      "numberedAreas": 1379,
+      "areas4digits": 1251,
+      "areas5digits": 128,
+      "compounds": 2768053,
+      "compounds4digits": 1549299,
+      "compounds5digits": 1218754,
+      "shareOfCompoundsIn4digitAreas": 0.56,
+      "grandLome": {
+        "areas": 91,
+        "compounds": 545465
+      },
+      "largestBlock": "Sagbado (GOL0402) 10000-92599, 41,259 compounds"
+    }
+  },
+  "check": {
+    "algorithm": "Damm (decimal quasigroup, order 10)",
+    "over": "4-digit national name id + 4-digit area index + number",
+    "detects": "every single-digit error, every adjacent transposition, a number copied onto another area (same-named or not): binds name + number + area",
+    "shownOn": "machine form, plates, forms; optional after a dash in the written remembered form; never needs remembering"
+  },
+  "spot": {
+    "grid": "geographic; cell 1/32768 degree (3.37 m N-S, 3.35-3.38 m E-W)",
+    "why": "Togo straddles UTM zones 30 and 31 at 0 deg longitude; a geographic grid has no seam",
+    "frame": "quartier or canton box, origin snapped down to 1/1024 deg; chars per axis = smallest k with 20^k cells covering the box",
+    "alphabet": "23456789CFGHJKMPRVWX (Q replaced by K: Q is used by neither Ewe nor Kabiyè)",
+    "format": "<frame key>-<chars>-<chars>, north and east digits interleaved, e.g. 'AMT-97-M8', 'KOZ06-36X-M4G'",
+    "use": "any point (stall, field, beach, site); shared by link inside the app, not memorised; offline; in Grand Lomé the only N-Ways locator, never printed on plates"
+  },
+  "compounds": {
+    "definition": "a fenced or walled plot (concession, cour, parcelle) with its structures; usually one portail",
+    "subUnits": {
+      "structure": ".n (largest = 1)",
+      "entrance": "/n (/1 = gate)",
+      "flats": "not coded or published",
+      "boutiqueInWall": "entrance of the compound, or own compound if separately held",
+      "estate": "estate gate entrance -> compound gate"
+    },
+    "groupingRules": [
+      {
+        "rule": "enclosure",
+        "when": "centroids inside one closed OSM barrier=wall/fence/hedge ring <= 6,000 m2",
+        "confidence": 0.85
+      },
+      {
+        "rule": "annex",
+        "when": "structure < 30 m2 within 6 m of a structure >= 30 m2 (8 m in the rural north)",
+        "confidence": 0.6
+      },
+      {
+        "rule": "hut-cluster",
+        "when": "rural north only (Kara, Savanes): structures < 35 m2 within 3 m chain, max 20",
+        "confidence": 0.5
+      },
+      {
+        "rule": "single",
+        "when": "otherwise",
+        "confidence": 0.4
+      },
+      {
+        "rule": "people",
+        "when": "'these buildings are one home' / 'this is the gate' agreed by others",
+        "confidence": "0.9+"
+      }
+    ],
+    "order": "group structures into compounds, then number compounds (the space-filling order runs over compounds)",
+    "regroupingNeverChangesIssuedCodes": true,
+    "gate": "OSM barrier=gate on the compound boundary where mapped; else the centre of the main structure, until people confirm the gate",
+    "profile": {
+      "class": [
+        "residential-one-household",
+        "residential-multi-household",
+        "residential-multi-storey",
+        "mixed",
+        "commercial",
+        "institutional",
+        "industrial",
+        "other"
+      ],
+      "plotAreaM2": "enclosure/outline area when known",
+      "structures": "count",
+      "floorAreaM2": "sum",
+      "gates": "list"
+    },
+    "capitalSample": {
+      "scope": "Grand Lomé outside the former commune (Golfe and Agoè-Nyivé préfectures, HDX), 303 km2",
+      "structures": 468288,
+      "compounds": 369792,
+      "perCompound": {
+        "1": 290196,
+        "2": 64274,
+        "3-5": 15179,
+        "6-10": 132,
+        "11+": 11
+      },
+      "mappedEnclosures": 1428,
+      "enclosureMedianM2": 634,
+      "mappedGates": 96
+    },
+    "grandLome": "compounds are grouped and profiled for navigation; the official entrance address is attached to the entrance (usually the gate)"
+  },
+  "buildingProfile": {
+    "fields": {
+      "id": "structure id (compound code + .n)",
+      "class": "use class (taxonomy below)",
+      "classConfidence": "0-1",
+      "classSource": "osm | places | landuse | size | default | people | partner",
+      "footprintM2": "geodesic",
+      "perimeterM": "geodesic",
+      "heightM": "OSM height",
+      "heightSource": "osm:height | people",
+      "floors": "OSM building:levels, else round(OSM height / 3), at least 1; never from the modelled heights of the Google/Microsoft footprints",
+      "floorAreaM2": "footprint x floors",
+      "entrances": "list of {kind: gate|door|boutique|service, point, confirmed}",
+      "name": "businesses and public buildings only",
+      "status": "existing | under_construction | ruin | demolished",
+      "footprintSource": "osm | google | microsoft | people",
+      "crossRefs": "DAGL street code/name + metric entrance number; titre foncier (only when its holder adds it)",
+      "lastConfirmed": "date of latest agreeing evidence",
+      "perAttributeSource": "every attribute carries its source and date"
+    },
+    "taxonomy": {
+      "residential": [
+        "concession/cour familiale",
+        "cour commune",
+        "villa",
+        "maison en bande / chambres-salon rental rows",
+        "immeuble R+n",
+        "case ronde / Kabiyè compound room",
+        "takienta (Tamberma tower-house, Koutammakou)"
+      ],
+      "commercial": [
+        "boutique",
+        "kiosque",
+        "marché",
+        "magasin/entrepôt",
+        "station-service"
+      ],
+      "office": [],
+      "government": [
+        "administration",
+        "police/gendarmerie",
+        "military"
+      ],
+      "education": [],
+      "health": [],
+      "religious": [
+        "église",
+        "mosquée",
+        "couvent / lieu vodou"
+      ],
+      "industrial": [
+        "zone portuaire",
+        "zone franche",
+        "usine"
+      ],
+      "hospitality": [],
+      "transport": [
+        "gare routière",
+        "parking"
+      ],
+      "mixed": [
+        "shop below, home above"
+      ],
+      "agricultural": [],
+      "under_construction": [],
+      "ruin": [],
+      "unknown": []
+    },
+    "inference": [
+      {
+        "evidence": "OSM building=* other than yes",
+        "confidence": 0.85
+      },
+      {
+        "evidence": "OSM amenity/shop/office/tourism/healthcare on the footprint",
+        "confidence": 0.75
+      },
+      {
+        "evidence": "N-Ways place inside the footprint",
+        "confidence": 0.65
+      },
+      {
+        "evidence": "OSM landuse containing the centroid",
+        "confidence": 0.5
+      },
+      {
+        "evidence": "size: < 6 m2 annex/kiosk, > 2,500 m2 large shed",
+        "confidence": "0.3-0.4"
+      },
+      {
+        "evidence": "default residential",
+        "confidence": "0.45 (0.55 in residential landuse)"
+      },
+      {
+        "evidence": "agreement of several sources",
+        "confidence": "+0.05 each"
+      },
+      {
+        "evidence": "people at the door / the household / a partner",
+        "confidence": "replaces inference once agreed"
+      }
+    ],
+    "capitalSample": {
+      "structures": 468288,
+      "classFromDefault": 0.991,
+      "meanConfidence": 0.541,
+      "footprintM2": {
+        "p10": 17.1,
+        "p25": 27.3,
+        "p50": 51.8,
+        "p75": 97.5,
+        "p90": 161.4
+      },
+      "heightM": {
+        "p25": 4.4,
+        "p50": 5.3,
+        "p75": 6.1
+      },
+      "withHeight": 0.768,
+      "floors": {
+        "1": 360786,
+        "2": 107496,
+        "3+": 6
+      }
+    },
+    "public": [
+      "class",
+      "size",
+      "floors",
+      "entrances",
+      "status",
+      "names of businesses and public buildings",
+      "compound code"
+    ],
+    "private": [
+      "occupant names",
+      "households",
+      "phone numbers",
+      "ID numbers",
+      "gate photos (kept for confirmation, blurred)",
+      "who claimed a door"
+    ],
+    "corrections": "people (at the door, deliveries, the household), partners (couriers, utilities) via the API; consensus settles; nothing is queued for manual review"
+  },
+  "addMyHome": {
+    "steps": [
+      "stand at the gate: position averaged over a few seconds",
+      "draw the building on the imagery, or give the code of the compound when this is another of its doors",
+      "describe: households, structures, floors, use",
+      "a provisional code at once, by the issuer's rules (engine/SPEC.md 7 and 10)",
+      "confirmed by arrivals and deliveries with no neighbour dispute, or by new imagery"
+    ],
+    "checks": [
+      "no live code within 3 m of the point (the building already has one)",
+      "outline between 6 m2 and 20,000 m2, not over a building that has a code",
+      "another door within 80 m of its code",
+      "a daily limit per phone or issuing key"
+    ],
+    "statement": "Un code N-Ways est une adresse, pas un titre foncier.",
+    "offline": "spot code at once; compound code from the registry on next connection",
+    "privacyKept": "the point, and the outline when drawn",
+    "legal": {
+      "law": "Loi 2018-005 Code foncier et domanial",
+      "cadastre": "OTR DCCF; art. 33: the cadastre neither gives nor takes property",
+      "survey": "plans by géomètre agréé; bornage by géomètre assermenté (art. 230-231); plans tied to the national geodetic network (art. 40)",
+      "datum": "not verified (probably WGS84 / UTM 31N)"
+    }
+  },
+  "interoperation": {
+    "DAGL": "authoritative in Grand Lomé: import and show its addresses as written; offer the registry back",
+    "SPT": "P.O. box free text; PostMap postal code as attribute if published",
+    "OTR": "titre foncier: optional cross-reference, added by its holder",
+    "plusCodes": "every spot converts to lat/lon, so to a Plus Code; N-Ways does not use what3words or TogoLink"
+  },
+  "privacy": {
+    "law": "Loi 2019-014",
+    "authority": "IPDCP (operating since 28 Mar 2025)",
+    "steps": [
+      "prior declaration of the processing to the IPDCP",
+      "consent for door claims and photos",
+      "access/rectification/erasure in the app",
+      "no link to ANID NIU",
+      "private entrances on request"
+    ]
+  },
+  "governance": {
+    "maintainer": "N-Ways until hand-over",
+    "partners": [
+      "DAGL",
+      "117 communes",
+      "SPT",
+      "OTR DCCF",
+      "Togo Digital",
+      "INSEED",
+      "IPDCP",
+      "emergency services (117/161, 172, 118)",
+      "couriers"
+    ],
+    "handOver": "repo can transfer to DAGL, a commune grouping or the State"
+  },
+  "distribution": {
+    "app": "shows 'Mon adresse N-Ways' when home is known; one-tap share by WhatsApp/SMS link",
+    "plates": "plate or sticker with the remembered code and a QR code",
+    "partners": "API lookup; the registry server (server/) for any institution",
+    "ussd": "none",
+    "smsLookup": "not provided"
+  },
+  "officialAddressesFirst": {
+    "rule": "where the State gives an address, that address is the official one: imported, shown first exactly as written; the N-Ways code stands beside it and every compound has one",
+    "coverage": [
+      {
+        "area": "former commune of Lomé (69 quartiers)",
+        "official": "1997 street codes (number + quartier code, e.g. 165 AMT), DAGL modernisation",
+        "data": "street names and codes partly in OSM (ODbL); DAGL databases not released",
+        "nways": "official street within 30 m shown first (71,002 compounds), then the N-Ways code"
+      },
+      {
+        "area": "rest of Grand Lomé (Golfe, Agoè-Nyivé)",
+        "official": "DAGL + Edenmap (Dec 2025): coded/named streets, metric entrance numbers, ~500,000 addresses",
+        "data": "not yet released",
+        "nways": "the N-Ways code; the DAGL address first once released"
+      },
+      {
+        "area": "rest of Togo",
+        "official": "none (P.O. boxes only)",
+        "data": "-",
+        "nways": "the N-Ways code"
+      }
+    ],
+    "futureTowns": "if an official system reaches other towns, its addresses take first place there; N-Ways codes already issued stay valid beside them"
+  },
+  "officialData": {
+    "legacyStreetCodes": {
+      "source": "OpenStreetMap ref/name (ODbL); commune/DAGL street register when obtained",
+      "shown": "exactly as written"
+    },
+    "dagl": {
+      "holder": "District Autonome du Grand Lomé (DAGL), contractor Edenmap",
+      "access": "not released; request a data-sharing agreement (N-Ways offers its compound registry, gate positions and door confirmations)",
+      "terms": "to agree; no licence published"
+    },
+    "import": "each record (street code/name, entrance number, point) attached to the nearest gate within 15 m; one record per entrance; unmatched records kept at their own point, never forced",
+    "sync": "each DAGL release replaces the previous; history kept; disagreements with people's confirmations reported to DAGL, never overwritten",
+    "display": "official address first, verbatim (official spelling), then N-Ways navigation aids"
+  },
+  "nationalNames": {
+    "rule": "context (préfecture, phone position, asking which one) is never used to decode; all areas whose names share a name key draw from ONE national range for that name, split into frozen blocks, so name + number decodes to exactly one area and compound",
+    "file": "model/areas/names.json (tools/name_ranges.py); fields nameId, nameKey, blocks in model/areas/areas.json",
+    "cleaning": "drop 'Résidence du chef du village de', 'Écovillage', 'Village (de)', 'Quartier', ', Togo', ' village', parentheses (aka -> alias), trailing part numbers; title-case all-capital names; junk ('unknow') -> canton name; no digit in a numbered name; 70 names cleaned",
+    "nameKey": "ɛɔŋƒʋɖɣ -> e o n f v d g; accents, case, spaces, hyphens, apostrophes folded; leading le/la/les/l' and trailing part numbers dropped; PH=F, QU=K, DJ=J, OU=U=W, hard C=K, doubled letters single; St/Ste/N.-D. expanded to Saint/Sainte/Notre-Dame first",
+    "space": {
+      "4": [
+        1000,
+        9999
+      ],
+      "5": [
+        10000,
+        99999
+      ]
+    },
+    "block": "max(200, ceil(compounds x 2 / 100) x 100); planned smallest first; 4-digit part while it fits, else 5-digit part",
+    "nameSpare": ">= 5,000 numbers always free per name (for new same-named areas and extra blocks)",
+    "qualifier": "only if a name cannot fit: one established qualifier people already say, decided once per area, listed in QUALIFIERS / names.json; none needed today",
+    "frozen": "blocks allocated at first issue from the real count, never moved or renumbered; new same-named area -> new block from the free space; full area -> extra block; ids and blocks appended only",
+    "aliases": "an alias may not be another name's key; the official name is an alias of its area unless that key is another plate name or the official name of an area with another plate name (then dropped and listed; none today)",
+    "check": "Damm over name id (4 digits) + area index (4 digits) + number",
+    "counts": {
+      "numberedAreas": 1379,
+      "nameKeys": 1323,
+      "repeatedNames": 50,
+      "areasUnderRepeatedNames": 106,
+      "compoundsUnderRepeatedNames": 240136,
+      "repeatedNamesAll4digit": 34,
+      "repeatedNamesWith5digitBlock": 16,
+      "mostRepeated": {
+        "name": "Lom-Nava",
+        "areas": 6,
+        "blocks": {
+          "OGO0612": [
+            1000,
+            1199
+          ],
+          "LNV": [
+            1200,
+            2899
+          ],
+          "MMO0603": [
+            2900,
+            5199
+          ],
+          "KLO0108": [
+            5200,
+            8399
+          ],
+          "OGO0414": [
+            10000,
+            17599
+          ],
+          "ZIO1501": [
+            17600,
+            26699
+          ]
+        }
+      },
+      "largestBlock": {
+        "name": "Sagbado",
+        "area": "GOL0402",
+        "block": [
+          10000,
+          92599
+        ],
+        "compounds": 41259
+      },
+      "qualifiers": []
+    },
+    "examples": [
+      {
+        "text": "Tokpo 11 00",
+        "area": "DNY0417 (Danyi)"
+      },
+      {
+        "text": "Tokpo 15 00",
+        "area": "ZIO0216 (Zio)"
+      },
+      {
+        "text": "Tokpo 24 17",
+        "area": "LAC0603 (Lacs)"
+      },
+      {
+        "text": "Kamina 24 17",
+        "area": "AKB0304 (Akébou)"
+      },
+      {
+        "text": "Kamina 54 00",
+        "area": "OGO0411 (Ogou)"
+      },
+      {
+        "text": "Kamina 1 04 17",
+        "area": "EMO04 (Est-Mono)"
+      },
+      {
+        "text": "Zongo 15 00",
+        "area": "KLO0411 (Kloto)"
+      },
+      {
+        "text": "Zongo 1 41 98",
+        "area": "KOZ0615 (Kozah)"
+      },
+      {
+        "text": "Tokpo 54 17",
+        "result": "refused: in no block"
+      }
+    ]
+  },
+  "plateNames": {
+    "rule": "each numbered area has an officialName (full, printed small for context, never required) and a plate name (field name) used in the remembered code",
+    "limit": {
+      "chars": 12,
+      "words": 2,
+      "counting": "NFC characters: letters, spaces, hyphens, apostrophes count one each, an accented letter is one; words split at spaces and hyphens; linking words (de du des d la le les l et sur en au aux à) do not count; no digit"
+    },
+    "code": "engine/reference/plate_names.py; Togo word lists and avoid set in tools/name_ranges.py plate_for; spec engine/SPEC.md 3.2",
+    "lang": "fr",
+    "derivation": [
+      "documented short form (KNOWN, with source; none for Togo)",
+      "clean: \"X - Y\" -> \"X-Y\"; brackets, text after a slash, second spelling, generic words (Village de, Quartier, Lotissement, Cité, Zone, Secteur, Village, Hameau, Campement, Ferme, Résidence, Carrefour, Centre de formation rurale de), a linking word left at either end",
+      "fits -> plate name",
+      "else the most distinctive run of whole words that fits (rare words, end of the name preferred), taken only when clearly ahead (>= 1.5x), >= 4 letters, not in the avoid set; never cut a word",
+      "else needsCouncilChoice with up to 3 candidates (first one provisional)"
+    ],
+    "qualifiers": "never dropped automatically: haut, bas, nord, sud, nouveau, grand, petit... and Ewe/Mina kopé (copé, cope), kondji (condji), kodzi = village, kpota/kpotame = outskirts",
+    "avoid": "chefs-lieux of the 39 préfectures (region capitals included), Apéyémé, Adéta, Guérin, Gadzépé, the 69 Lomé quartiers, and towns across the borders (Hillacondji, Aflao, Ho, Keta, Kpando, Kumasi, Tamale, Bolgatanga, Tema, Accra, Cotonou, Porto-Novo, Ouidah, Abomey, Bohicon, Parakou, Djougou, Natitingou, Lagos, Abidjan, Ouagadougou); minus the area's own town (its préfecture seat, its canton, its own name)",
+    "council": "flagged areas (needsCouncilChoice, plateCandidates, plateReason) are listed in model/areas/names.json councilChoices; codes are issued under the first candidate; the commune may choose once, the old name stays an alias and numbers do not change",
+    "fields": {
+      "name": "plate name",
+      "officialName": "full name",
+      "plateRule": "as-is | cleaned | abbreviated | known | distinctive | council",
+      "needsCouncilChoice": "bool",
+      "plateCandidates": "<= 3",
+      "plateReason": "why flagged"
+    },
+    "counts": {
+      "numberedAreas": 1379,
+      "officialOverLimit": 122,
+      "officialOverChars": 121,
+      "officialOverWords": 14,
+      "byRule": {
+        "as-is": 1253,
+        "cleaned": 17,
+        "distinctive": 33,
+        "council": 76
+      },
+      "needsCouncilChoice": 76,
+      "stillOverLimit": 25,
+      "codesUnderProvisionalPlate": 145645,
+      "officialAliasesDropped": 0,
+      "longestRemembered": "Tokoin-Wuiti 1 97 99",
+      "longestRememberedFlagged": "Koussocointougou 15 99"
+    },
+    "examples": [
+      {
+        "official": "Gboto Koissidamé",
+        "plate": "Koissidamé",
+        "rule": "distinctive"
+      },
+      {
+        "official": "Agou Yiboè Avédzé",
+        "plate": "Yiboè Avédzé",
+        "rule": "distinctive"
+      },
+      {
+        "official": "Centre de formation rurale de Tami",
+        "plate": "Tami",
+        "rule": "cleaned",
+        "note": "shares the range of Tami: \"Tami 10 17\" (centre) vs \"Tami 15 17\" (village)"
+      },
+      {
+        "official": "Cité de Djagblé",
+        "plate": "Djagblé",
+        "rule": "cleaned"
+      },
+      {
+        "official": "Aklassou kopé",
+        "plate": "Aklassou (provisional)",
+        "rule": "council",
+        "reason": "would drop kopé"
+      },
+      {
+        "official": "Koussocointougou",
+        "plate": "Koussocointougou (over the limit)",
+        "rule": "council",
+        "reason": "one word over 12 letters: issued under its name until the commune gives a short one"
+      }
+    ]
+  }
+}

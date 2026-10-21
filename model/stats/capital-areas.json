@@ -1,0 +1,58 @@
+{
+ "placeKinds": [
+  "suburb",
+  "quarter",
+  "neighbourhood",
+  "village",
+  "hamlet"
+ ],
+ "places": 92,
+ "areasUsed": 34,
+ "compoundRatio": 0.79,
+ "compoundsPerArea": {
+  "p10": 280,
+  "p50": 8940,
+  "p90": 24574,
+  "max": 34536
+ },
+ "areasFitting": {
+  "3 digits (<=450)": 4,
+  "4 digits (<=4500)": 7,
+  "5 digits (<=45000)": 23,
+  "over": 0
+ },
+ "largest": [
+  [
+   "Agoè-Démakpoè",
+   34536
+  ],
+  [
+   "Sagbado",
+   32569
+  ],
+  [
+   "Agovémé",
+   28888
+  ],
+  [
+   "Minamadou",
+   24574
+  ],
+  [
+   "Sanguera",
+   23940
+  ],
+  [
+   "Vakpossito",
+   22821
+  ],
+  [
+   "Kohe",
+   21916
+  ],
+  [
+   "Klémé",
+   20568
+  ]
+ ]
+}

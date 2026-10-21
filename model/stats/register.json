@@ -1,0 +1,26 @@
+{
+ "areas": 1379,
+ "areasWithCompounds": 1371,
+ "compounds": 2768053,
+ "grandLome": {
+  "areas": 91,
+  "compounds": 545465
+ },
+ "nameKeys": 1323,
+ "sharedNames": 50,
+ "areasInSharedNames": 106,
+ "areasByDigits": {
+  "4": 1251,
+  "5": 128
+ },
+ "compoundsByDigits": {
+  "4": 1549299,
+  "5": 1218754
+ },
+ "needsCouncilChoice": 76,
+ "largestArea": {
+  "key": "GOL0402",
+  "name": "Sagbado",
+  "compounds": 41259
+ }
+}

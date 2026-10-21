@@ -1,0 +1,16 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{common}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[width=11.5cm, height=6.4cm, xbar stacked, bar width=10pt, xmin=0, xmax=900,
+  ytick={0,...,5}, yticklabels from table={sources.dat}{region}, y dir=reverse, ymin=-0.6, ymax=5.6,
+  xlabel={\T{building footprints (thousands)}{empreintes de bâtiments (milliers)}},
+  xmajorgrids, grid style={grid}, axis x line*=bottom, axis y line*=left, y axis line style={draw=none},
+  ytick style={draw=none}, legend style={draw=none, fill=none, at={(0.5,1.03)}, anchor=south, font=\footnotesize, legend columns=1},
+  legend cell align=left]
+\addplot[fill=ink, draw=none] table[y=i, x expr=\thisrow{osm}/1000] {sources.dat};
+\addplot[fill=gold, draw=none] table[y=i, x expr=\thisrow{ml}/1000] {sources.dat};
+\legend{\T{OpenStreetMap}{OpenStreetMap}, \T{Google Open Buildings and Microsoft, where OpenStreetMap has none}{Google Open Buildings et Microsoft, là où OpenStreetMap n'a rien}}
+\end{axis}
+\end{tikzpicture}
+\end{document}

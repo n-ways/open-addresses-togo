@@ -1,0 +1,1528 @@
+{
+ "note": "Real OpenStreetMap footprints (ODbL) in Grand Lomé (Amoutivé, Bè, Tokoin-Lycée, Agoè-Nyivé: the DAGL area, where the official address comes first) and outside it (Kara, Kpalimé, Tsévié). Expected values pin the reference engine.",
+ "spots": [
+  {
+   "window": "AMT",
+   "osm": "way/1218721039",
+   "lat": 6.1404638,
+   "lon": 1.2317629,
+   "spot": "AMT-97-M8",
+   "decoded": [
+    6.1404572,
+    1.2317657
+   ],
+   "cellM": [
+    3.37,
+    3.38
+   ]
+  },
+  {
+   "window": "BE",
+   "osm": "way/1219465886",
+   "lat": 6.1422796,
+   "lon": 1.2484594,
+   "spot": "BE-2GC-MK",
+   "decoded": [
+    6.1422882,
+    1.2484589
+   ],
+   "cellM": [
+    3.37,
+    3.38
+   ]
+  },
+  {
+   "window": "TKL",
+   "osm": "way/1147060537",
+   "lat": 6.1516915,
+   "lon": 1.2246504,
+   "spot": "TKL-25H-M7",
+   "decoded": [
+    6.1516876,
+    1.2246552
+   ],
+   "cellM": [
+    3.37,
+    3.38
+   ]
+  },
+  {
+   "window": "AGOE",
+   "osm": "way/531443663",
+   "lat": 6.2470438,
+   "lon": 1.2129423,
+   "spot": "AGN02-673-2HV",
+   "decoded": [
+    6.2470551,
+    1.2129364
+   ],
+   "cellM": [
+    3.37,
+    3.38
+   ]
+  },
+  {
+   "window": "KARA",
+   "osm": "way/951973228",
+   "lat": 9.5492791,
+   "lon": 1.1973373,
+   "spot": "KOZ06-36X-M4G",
+   "decoded": [
+    9.5492706,
+    1.1973419
+   ],
+   "cellM": [
+    3.38,
+    3.35
+   ]
+  },
+  {
+   "window": "KPALIME",
+   "osm": "way/306709479",
+   "lat": 6.9005736,
+   "lon": 0.6293922,
+   "spot": "KLO04-49H-HF5",
+   "decoded": [
+    6.9005585,
+    0.6293793
+   ],
+   "cellM": [
+    3.37,
+    3.37
+   ]
+  },
+  {
+   "window": "TSEVIE",
+   "osm": "way/327414529",
+   "lat": 6.4260388,
+   "lon": 1.2133417,
+   "spot": "ZIO15-46K-468",
+   "decoded": [
+    6.4260406,
+    1.2133331
+   ],
+   "cellM": [
+    3.37,
+    3.38
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "osm": "way/1218721039",
+   "lat": 6.1404638,
+   "lon": 1.2317629,
+   "area": "AMT",
+   "kind": "lome-quartier",
+   "name": "Amoutivé",
+   "numberLength": 4,
+   "official": false
+  },
+  {
+   "osm": "way/1219465886",
+   "lat": 6.1422796,
+   "lon": 1.2484594,
+   "area": "BE",
+   "kind": "lome-quartier",
+   "name": "Bè",
+   "numberLength": 4,
+   "official": false
+  },
+  {
+   "osm": "way/1147060537",
+   "lat": 6.1516915,
+   "lon": 1.2246504,
+   "area": "TKL",
+   "kind": "lome-quartier",
+   "name": "Tokoin-Lycée",
+   "numberLength": 4,
+   "official": false
+  },
+  {
+   "osm": "way/531443663",
+   "lat": 6.2470438,
+   "lon": 1.2129423,
+   "area": "AGN0202",
+   "kind": "cell",
+   "name": "Démakpoè",
+   "numberLength": 5,
+   "official": false
+  },
+  {
+   "osm": "way/951973228",
+   "lat": 9.5492791,
+   "lon": 1.1973373,
+   "area": "KOZ0604",
+   "kind": "cell",
+   "name": "Kara",
+   "numberLength": 4,
+   "official": false
+  },
+  {
+   "osm": "way/306709479",
+   "lat": 6.9005736,
+   "lon": 0.6293922,
+   "area": "KLO0403",
+   "kind": "cell",
+   "name": "Fiakomé",
+   "numberLength": 4,
+   "official": false
+  },
+  {
+   "osm": "way/327414529",
+   "lat": 6.4260388,
+   "lon": 1.2133417,
+   "area": "ZIO1502",
+   "kind": "cell",
+   "name": "Tsévié",
+   "numberLength": 5,
+   "official": false
+  }
+ ],
+ "compounds": [
+  {
+   "window": "AMT",
+   "area": "AMT",
+   "official": false,
+   "params": {
+    "annex_m2": 30.0,
+    "attach_m": 6.0,
+    "hut_m2": 0.0
+   },
+   "structures": 150,
+   "walls": 0,
+   "compounds": 123,
+   "byRule": {
+    "enclosure": 0,
+    "annex": 23,
+    "hut-cluster": 0,
+    "single": 100
+   },
+   "first": [
+    {
+     "main": "way/1218721059",
+     "members": [
+      "way/1218721059",
+      "way/1218721058"
+     ],
+     "rule": "annex",
+     "number": 1000,
+     "remembered": "Amoutivé 10 00",
+     "machine": "TG-AMT-1000-8",
+     "spokenFr": "Amoutivé, dix, zéro zéro"
+    },
+    {
+     "main": "way/1218721064",
+     "members": [
+      "way/1218721064"
+     ],
+     "rule": "single",
+     "number": 1014,
+     "remembered": "Amoutivé 10 14",
+     "machine": "TG-AMT-1014-5",
+     "spokenFr": "Amoutivé, dix, quatorze"
+    },
+    {
+     "main": "way/1218721063",
+     "members": [
+      "way/1218721063"
+     ],
+     "rule": "single",
+     "number": 1028,
+     "remembered": "Amoutivé 10 28",
+     "machine": "TG-AMT-1028-9",
+     "spokenFr": "Amoutivé, dix, vingt-huit"
+    },
+    {
+     "main": "way/1218721062",
+     "members": [
+      "way/1218721062"
+     ],
+     "rule": "single",
+     "number": 1042,
+     "remembered": "Amoutivé 10 42",
+     "machine": "TG-AMT-1042-9",
+     "spokenFr": "Amoutivé, dix, quarante-deux"
+    },
+    {
+     "main": "way/1218721050",
+     "members": [
+      "way/1218721050"
+     ],
+     "rule": "single",
+     "number": 1056,
+     "remembered": "Amoutivé 10 56",
+     "machine": "TG-AMT-1056-9",
+     "spokenFr": "Amoutivé, dix, cinquante-six"
+    },
+    {
+     "main": "way/1218721049",
+     "members": [
+      "way/1218721049"
+     ],
+     "rule": "single",
+     "number": 1070,
+     "remembered": "Amoutivé 10 70",
+     "machine": "TG-AMT-1070-9",
+     "spokenFr": "Amoutivé, dix, soixante-dix"
+    }
+   ]
+  },
+  {
+   "window": "BE",
+   "area": "BE",
+   "official": false,
+   "params": {
+    "annex_m2": 30.0,
+    "attach_m": 6.0,
+    "hut_m2": 0.0
+   },
+   "structures": 335,
+   "walls": 0,
+   "compounds": 181,
+   "byRule": {
+    "enclosure": 0,
+    "annex": 63,
+    "hut-cluster": 0,
+    "single": 118
+   },
+   "first": [
+    {
+     "main": "way/1214528543",
+     "members": [
+      "way/1214528543",
+      "way/1214528542"
+     ],
+     "rule": "annex",
+     "number": 1000,
+     "remembered": "Bè 10 00",
+     "machine": "TG-BE-1000-0",
+     "spokenFr": "Bè, dix, zéro zéro"
+    },
+    {
+     "main": "way/1214528540",
+     "members": [
+      "way/1214528540"
+     ],
+     "rule": "single",
+     "number": 1022,
+     "remembered": "Bè 10 22",
+     "machine": "TG-BE-1022-9",
+     "spokenFr": "Bè, dix, vingt-deux"
+    },
+    {
+     "main": "way/1214528535",
+     "members": [
+      "way/1214528535"
+     ],
+     "rule": "single",
+     "number": 1044,
+     "remembered": "Bè 10 44",
+     "machine": "TG-BE-1044-2",
+     "spokenFr": "Bè, dix, quarante-quatre"
+    },
+    {
+     "main": "way/1214528544",
+     "members": [
+      "way/1214528544"
+     ],
+     "rule": "single",
+     "number": 1066,
+     "remembered": "Bè 10 66",
+     "machine": "TG-BE-1066-7",
+     "spokenFr": "Bè, dix, soixante-six"
+    },
+    {
+     "main": "way/1214528554",
+     "members": [
+      "way/1214528554"
+     ],
+     "rule": "single",
+     "number": 1088,
+     "remembered": "Bè 10 88",
+     "machine": "TG-BE-1088-7",
+     "spokenFr": "Bè, dix, quatre-vingt-huit"
+    },
+    {
+     "main": "way/1214528552",
+     "members": [
+      "way/1214528552"
+     ],
+     "rule": "single",
+     "number": 1110,
+     "remembered": "Bè 11 10",
+     "machine": "TG-BE-1110-8",
+     "spokenFr": "Bè, onze, dix"
+    }
+   ]
+  },
+  {
+   "window": "TKL",
+   "area": "TKL",
+   "official": false,
+   "params": {
+    "annex_m2": 30.0,
+    "attach_m": 6.0,
+    "hut_m2": 0.0
+   },
+   "structures": 325,
+   "walls": 2,
+   "compounds": 132,
+   "byRule": {
+    "enclosure": 0,
+    "annex": 74,
+    "hut-cluster": 0,
+    "single": 58
+   },
+   "first": [
+    {
+     "main": "way/1141893117",
+     "members": [
+      "way/1141893117"
+     ],
+     "rule": "single",
+     "number": 1000,
+     "remembered": "Tokoin-Lycée 10 00",
+     "machine": "TG-TKL-1000-9",
+     "spokenFr": "Tokoin-Lycée, dix, zéro zéro"
+    },
+    {
+     "main": "way/1141916417",
+     "members": [
+      "way/1141916417",
+      "way/1141916416"
+     ],
+     "rule": "annex",
+     "number": 1010,
+     "remembered": "Tokoin-Lycée 10 10",
+     "machine": "TG-TKL-1010-2",
+     "spokenFr": "Tokoin-Lycée, dix, dix"
+    },
+    {
+     "main": "way/1141890704",
+     "members": [
+      "way/1141890704"
+     ],
+     "rule": "single",
+     "number": 1020,
+     "remembered": "Tokoin-Lycée 10 20",
+     "machine": "TG-TKL-1020-6",
+     "spokenFr": "Tokoin-Lycée, dix, vingt"
+    },
+    {
+     "main": "way/1141887363",
+     "members": [
+      "way/1141887363",
+      "way/1141887351"
+     ],
+     "rule": "annex",
+     "number": 1030,
+     "remembered": "Tokoin-Lycée 10 30",
+     "machine": "TG-TKL-1030-3",
+     "spokenFr": "Tokoin-Lycée, dix, trente"
+    },
+    {
+     "main": "way/1141890703",
+     "members": [
+      "way/1141890703"
+     ],
+     "rule": "single",
+     "number": 1040,
+     "remembered": "Tokoin-Lycée 10 40",
+     "machine": "TG-TKL-1040-1",
+     "spokenFr": "Tokoin-Lycée, dix, quarante"
+    },
+    {
+     "main": "way/1141891258",
+     "members": [
+      "way/1141891258"
+     ],
+     "rule": "single",
+     "number": 1050,
+     "remembered": "Tokoin-Lycée 10 50",
+     "machine": "TG-TKL-1050-5",
+     "spokenFr": "Tokoin-Lycée, dix, cinquante"
+    }
+   ]
+  },
+  {
+   "window": "AGOE",
+   "area": "AGN0202",
+   "official": false,
+   "params": {
+    "annex_m2": 30.0,
+    "attach_m": 6.0,
+    "hut_m2": 0.0
+   },
+   "structures": 30,
+   "walls": 0,
+   "compounds": 28,
+   "byRule": {
+    "enclosure": 0,
+    "annex": 2,
+    "hut-cluster": 0,
+    "single": 26
+   },
+   "first": [
+    {
+     "main": "way/923523130",
+     "members": [
+      "way/923523130"
+     ],
+     "rule": "single",
+     "number": 10000,
+     "remembered": "Démakpoè 1 00 00",
+     "machine": "TG-AGN0202-10000-1",
+     "spokenFr": "Démakpoè, un, zéro zéro, zéro zéro"
+    },
+    {
+     "main": "way/531467674",
+     "members": [
+      "way/531467674"
+     ],
+     "rule": "single",
+     "number": 10759,
+     "remembered": "Démakpoè 1 07 59",
+     "machine": "TG-AGN0202-10759-1",
+     "spokenFr": "Démakpoè, un, zéro sept, cinquante-neuf"
+    },
+    {
+     "main": "way/923523133",
+     "members": [
+      "way/923523133"
+     ],
+     "rule": "single",
+     "number": 11518,
+     "remembered": "Démakpoè 1 15 18",
+     "machine": "TG-AGN0202-11518-3",
+     "spokenFr": "Démakpoè, un, quinze, dix-huit"
+    },
+    {
+     "main": "way/531467657",
+     "members": [
+      "way/531467657"
+     ],
+     "rule": "single",
+     "number": 12277,
+     "remembered": "Démakpoè 1 22 77",
+     "machine": "TG-AGN0202-12277-1",
+     "spokenFr": "Démakpoè, un, vingt-deux, soixante-dix-sept"
+    },
+    {
+     "main": "way/531467659",
+     "members": [
+      "way/531467659"
+     ],
+     "rule": "single",
+     "number": 13036,
+     "remembered": "Démakpoè 1 30 36",
+     "machine": "TG-AGN0202-13036-1",
+     "spokenFr": "Démakpoè, un, trente, trente-six"
+    },
+    {
+     "main": "way/531467658",
+     "members": [
+      "way/531467658"
+     ],
+     "rule": "single",
+     "number": 13795,
+     "remembered": "Démakpoè 1 37 95",
+     "machine": "TG-AGN0202-13795-1",
+     "spokenFr": "Démakpoè, un, trente-sept, quatre-vingt-quinze"
+    }
+   ]
+  },
+  {
+   "window": "KARA",
+   "area": "KOZ0604",
+   "official": false,
+   "params": {
+    "annex_m2": 30.0,
+    "attach_m": 8.0,
+    "hut_m2": 35.0,
+    "hut_gap_m": 3.0,
+    "hut_max": 20
+   },
+   "structures": 33,
+   "walls": 2,
+   "compounds": 30,
+   "byRule": {
+    "enclosure": 0,
+    "annex": 2,
+    "hut-cluster": 0,
+    "single": 28
+   },
+   "first": [
+    {
+     "main": "way/364958732",
+     "members": [
+      "way/364958732"
+     ],
+     "rule": "single",
+     "number": 1000,
+     "remembered": "Kara 10 00",
+     "machine": "TG-KOZ0604-1000-4",
+     "spokenFr": "Kara, dix, zéro zéro"
+    },
+    {
+     "main": "way/884224532",
+     "members": [
+      "way/884224532"
+     ],
+     "rule": "single",
+     "number": 1106,
+     "remembered": "Kara 11 06",
+     "machine": "TG-KOZ0604-1106-0",
+     "spokenFr": "Kara, onze, zéro six"
+    },
+    {
+     "main": "way/1284505600",
+     "members": [
+      "way/1284505600"
+     ],
+     "rule": "single",
+     "number": 1212,
+     "remembered": "Kara 12 12",
+     "machine": "TG-KOZ0604-1212-4",
+     "spokenFr": "Kara, douze, douze"
+    },
+    {
+     "main": "way/318087233",
+     "members": [
+      "way/318087233"
+     ],
+     "rule": "single",
+     "number": 1318,
+     "remembered": "Kara 13 18",
+     "machine": "TG-KOZ0604-1318-7",
+     "spokenFr": "Kara, treize, dix-huit"
+    },
+    {
+     "main": "way/318087229",
+     "members": [
+      "way/318087229"
+     ],
+     "rule": "single",
+     "number": 1424,
+     "remembered": "Kara 14 24",
+     "machine": "TG-KOZ0604-1424-7",
+     "spokenFr": "Kara, quatorze, vingt-quatre"
+    },
+    {
+     "main": "way/318087232",
+     "members": [
+      "way/318087232"
+     ],
+     "rule": "single",
+     "number": 1530,
+     "remembered": "Kara 15 30",
+     "machine": "TG-KOZ0604-1530-4",
+     "spokenFr": "Kara, quinze, trente"
+    }
+   ]
+  },
+  {
+   "window": "KPALIME",
+   "area": "KLO0403",
+   "official": false,
+   "params": {
+    "annex_m2": 30.0,
+    "attach_m": 6.0,
+    "hut_m2": 0.0
+   },
+   "structures": 76,
+   "walls": 0,
+   "compounds": 73,
+   "byRule": {
+    "enclosure": 0,
+    "annex": 3,
+    "hut-cluster": 0,
+    "single": 70
+   },
+   "first": [
+    {
+     "main": "way/850168800",
+     "members": [
+      "way/850168800"
+     ],
+     "rule": "single",
+     "number": 1000,
+     "remembered": "Fiakomé 10 00",
+     "machine": "TG-KLO0403-1000-0",
+     "spokenFr": "Fiakomé, dix, zéro zéro"
+    },
+    {
+     "main": "way/850168801",
+     "members": [
+      "way/850168801"
+     ],
+     "rule": "single",
+     "number": 1024,
+     "remembered": "Fiakomé 10 24",
+     "machine": "TG-KLO0403-1024-1",
+     "spokenFr": "Fiakomé, dix, vingt-quatre"
+    },
+    {
+     "main": "way/306714937",
+     "members": [
+      "way/306714937"
+     ],
+     "rule": "single",
+     "number": 1048,
+     "remembered": "Fiakomé 10 48",
+     "machine": "TG-KLO0403-1048-8",
+     "spokenFr": "Fiakomé, dix, quarante-huit"
+    },
+    {
+     "main": "way/306714960",
+     "members": [
+      "way/306714960"
+     ],
+     "rule": "single",
+     "number": 1072,
+     "remembered": "Fiakomé 10 72",
+     "machine": "TG-KLO0403-1072-6",
+     "spokenFr": "Fiakomé, dix, soixante-douze"
+    },
+    {
+     "main": "way/306714941",
+     "members": [
+      "way/306714941"
+     ],
+     "rule": "single",
+     "number": 1096,
+     "remembered": "Fiakomé 10 96",
+     "machine": "TG-KLO0403-1096-1",
+     "spokenFr": "Fiakomé, dix, quatre-vingt-seize"
+    },
+    {
+     "main": "way/306714934",
+     "members": [
+      "way/306714934"
+     ],
+     "rule": "single",
+     "number": 1120,
+     "remembered": "Fiakomé 11 20",
+     "machine": "TG-KLO0403-1120-3",
+     "spokenFr": "Fiakomé, onze, vingt"
+    }
+   ]
+  },
+  {
+   "window": "TSEVIE",
+   "area": "ZIO1502",
+   "official": false,
+   "params": {
+    "annex_m2": 30.0,
+    "attach_m": 6.0,
+    "hut_m2": 0.0
+   },
+   "structures": 30,
+   "walls": 0,
+   "compounds": 30,
+   "byRule": {
+    "enclosure": 0,
+    "annex": 0,
+    "hut-cluster": 0,
+    "single": 30
+   },
+   "first": [
+    {
+     "main": "way/331691458",
+     "members": [
+      "way/331691458"
+     ],
+     "rule": "single",
+     "number": 10000,
+     "remembered": "Tsévié 1 00 00",
+     "machine": "TG-ZIO1502-10000-5",
+     "spokenFr": "Tsévié, un, zéro zéro, zéro zéro"
+    },
+    {
+     "main": "way/327414524",
+     "members": [
+      "way/327414524"
+     ],
+     "rule": "single",
+     "number": 11004,
+     "remembered": "Tsévié 1 10 04",
+     "machine": "TG-ZIO1502-11004-1",
+     "spokenFr": "Tsévié, un, dix, zéro quatre"
+    },
+    {
+     "main": "way/327414860",
+     "members": [
+      "way/327414860"
+     ],
+     "rule": "single",
+     "number": 12008,
+     "remembered": "Tsévié 1 20 08",
+     "machine": "TG-ZIO1502-12008-5",
+     "spokenFr": "Tsévié, un, vingt, zéro huit"
+    },
+    {
+     "main": "way/327414525",
+     "members": [
+      "way/327414525"
+     ],
+     "rule": "single",
+     "number": 13012,
+     "remembered": "Tsévié 1 30 12",
+     "machine": "TG-ZIO1502-13012-8",
+     "spokenFr": "Tsévié, un, trente, douze"
+    },
+    {
+     "main": "way/327414855",
+     "members": [
+      "way/327414855"
+     ],
+     "rule": "single",
+     "number": 14016,
+     "remembered": "Tsévié 1 40 16",
+     "machine": "TG-ZIO1502-14016-7",
+     "spokenFr": "Tsévié, un, quarante, seize"
+    },
+    {
+     "main": "way/327414859",
+     "members": [
+      "way/327414859"
+     ],
+     "rule": "single",
+     "number": 15020,
+     "remembered": "Tsévié 1 50 20",
+     "machine": "TG-ZIO1502-15020-2",
+     "spokenFr": "Tsévié, un, cinquante, vingt"
+    }
+   ]
+  }
+ ],
+ "damm": [
+  {
+   "digits": "572",
+   "check": 4,
+   "source": "published Damm example"
+  }
+ ],
+ "parse": [
+  {
+   "text": "AMT 48 17",
+   "error": "unknown place 'Amt'"
+  },
+  {
+   "text": "amoutivé 4817",
+   "error": "no N-Ways address Amoutive 48 17: that number is in no block of the name 'Amoutive'"
+  },
+  {
+   "text": "165 AMT",
+   "result": {
+    "kind": "lome-street-code",
+    "street": 165,
+    "quartier": "AMT",
+    "note": "Lomé street code (street 165 of quartier AMT), not an N-Ways code"
+   }
+  },
+  {
+   "text": "Rue 46BE",
+   "result": {
+    "kind": "lome-street-code",
+    "street": 46,
+    "quartier": "BE",
+    "note": "Lomé street code (street 46 of quartier BE), not an N-Ways code"
+   }
+  },
+  {
+   "text": "13.QAD",
+   "result": {
+    "kind": "lome-street-code",
+    "street": 13,
+    "quartier": "QAD",
+    "note": "Lomé street code (street 13 of quartier QAD), not an N-Ways code"
+   }
+  },
+  {
+   "text": "Kara 24 17",
+   "result": {
+    "kind": "compound",
+    "area": "KOZ0604",
+    "number": 2417,
+    "structure": null,
+    "entrance": null,
+    "checked": false
+   }
+  },
+  {
+   "text": "kara 2417",
+   "result": {
+    "kind": "compound",
+    "area": "KOZ0604",
+    "number": 2417,
+    "structure": null,
+    "entrance": null,
+    "checked": false
+   }
+  },
+  {
+   "text": "TG-KOZ0604-2417-7",
+   "result": {
+    "kind": "compound",
+    "area": "KOZ0604",
+    "number": 2417,
+    "structure": null,
+    "entrance": null,
+    "checked": true
+   }
+  },
+  {
+   "text": "TG-KOZ0604-2417-8",
+   "error": "check digit does not match: mistyped code?"
+  },
+  {
+   "text": "Fiakomé 14 17",
+   "result": {
+    "kind": "compound",
+    "area": "KLO0403",
+    "number": 1417,
+    "structure": null,
+    "entrance": null,
+    "checked": false
+   }
+  },
+  {
+   "text": "Tsévié 1 32 17",
+   "result": {
+    "kind": "compound",
+    "area": "ZIO1502",
+    "number": 13217,
+    "structure": null,
+    "entrance": null,
+    "checked": false
+   }
+  },
+  {
+   "text": "Kara 417",
+   "error": "not a Togo N-Ways code: 'Kara 417'"
+  },
+  {
+   "text": "Tokpo 99 99",
+   "error": "no N-Ways address Tokpo 99 99: that number is in no block of the name 'Tokpo'"
+  },
+  {
+   "text": "Kara 99 99",
+   "error": "no N-Ways address Kara 99 99: that number is in no block of the name 'Kara'"
+  },
+  {
+   "text": "Bagou 1 00 17-9",
+   "error": "check digit does not match: mistyped code?"
+  },
+  {
+   "text": "Tokpo 12 17-4",
+   "result": {
+    "kind": "compound",
+    "area": "ZIO0216",
+    "number": 1217,
+    "structure": null,
+    "entrance": null,
+    "checked": true
+   }
+  },
+  {
+   "text": "Zongo 1 06 87",
+   "result": {
+    "kind": "compound",
+    "area": "KOZ0615",
+    "number": 10687,
+    "structure": null,
+    "entrance": null,
+    "checked": false
+   }
+  },
+  {
+   "text": "Village de Zomaï 10 00",
+   "result": {
+    "kind": "compound",
+    "area": "HAH0517",
+    "number": 1000,
+    "structure": null,
+    "entrance": null,
+    "checked": false
+   }
+  }
+ ],
+ "provisional": [
+  {
+   "area": "AMT",
+   "lat": 6.1406898,
+   "lon": 1.2319901,
+   "issuedInWindow": 123,
+   "number": 1371
+  },
+  {
+   "area": "BE",
+   "lat": 6.1425056,
+   "lon": 1.2486866,
+   "issuedInWindow": 181,
+   "number": 1825
+  },
+  {
+   "area": "TKL",
+   "lat": 6.1519175,
+   "lon": 1.2248777,
+   "issuedInWindow": 132,
+   "number": 1785
+  },
+  {
+   "area": "AGN0202",
+   "lat": 6.2472699,
+   "lon": 1.2131696,
+   "issuedInWindow": 28,
+   "number": 11138
+  },
+  {
+   "area": "KOZ0604",
+   "lat": 9.5495051,
+   "lon": 1.1975646,
+   "issuedInWindow": 30,
+   "number": 2325
+  },
+  {
+   "area": "KLO0403",
+   "lat": 6.9007996,
+   "lon": 0.6296194,
+   "issuedInWindow": 73,
+   "number": 1876
+  },
+  {
+   "area": "ZIO1502",
+   "lat": 6.4262648,
+   "lon": 1.213569,
+   "issuedInWindow": 30,
+   "number": 27570
+  }
+ ],
+ "sameName": [
+  {
+   "text": "Tokpo 10 17",
+   "area": "DNY0417",
+   "name": "Tokpo",
+   "nameId": 1125,
+   "prefecture": "Danyi",
+   "block": [
+    1000,
+    1199
+   ],
+   "point": [
+    0.717384,
+    7.191681
+   ],
+   "machine": "TG-DNY0417-1017-5",
+   "withCheck": "Tokpo 10 17-5"
+  },
+  {
+   "text": "Tokpo 12 17",
+   "area": "ZIO0216",
+   "name": "Tokpo",
+   "nameId": 1125,
+   "prefecture": "Zio",
+   "block": [
+    1200,
+    1999
+   ],
+   "point": [
+    1.033689,
+    6.868421
+   ],
+   "machine": "TG-ZIO0216-1217-4",
+   "withCheck": "Tokpo 12 17-4"
+  },
+  {
+   "text": "Tokpo 20 17",
+   "area": "LAC0603",
+   "name": "Tokpo",
+   "nameId": 1125,
+   "prefecture": "Lacs",
+   "block": [
+    2000,
+    4999
+   ],
+   "point": [
+    1.64689,
+    6.296773
+   ],
+   "machine": "TG-LAC0603-2017-0",
+   "withCheck": "Tokpo 20 17-0"
+  },
+  {
+   "text": "Kamina 10 17",
+   "area": "AKB0304",
+   "name": "Kamina",
+   "nameId": 599,
+   "prefecture": "Akebou",
+   "block": [
+    1000,
+    4999
+   ],
+   "point": [
+    0.854701,
+    7.923848
+   ],
+   "machine": "TG-AKB0304-1017-3",
+   "withCheck": "Kamina 10 17-3"
+  },
+  {
+   "text": "Kamina 50 17",
+   "area": "OGO0411",
+   "name": "Kamina",
+   "nameId": 599,
+   "prefecture": "Ogou",
+   "block": [
+    5000,
+    9799
+   ],
+   "point": [
+    1.169326,
+    7.503745
+   ],
+   "machine": "TG-OGO0411-5017-7",
+   "withCheck": "Kamina 50 17-7"
+  },
+  {
+   "text": "Kamina 1 00 17",
+   "area": "EMO04",
+   "name": "Kamina",
+   "nameId": 599,
+   "prefecture": "Est-Mono",
+   "block": [
+    10000,
+    20699
+   ],
+   "point": [
+    1.500758,
+    8.062945
+   ],
+   "machine": "TG-EMO04-10017-5",
+   "withCheck": "Kamina 1 00 17-5"
+  },
+  {
+   "text": "Bagou 10 17",
+   "area": "TDJ01",
+   "name": "Bagou",
+   "nameId": 268,
+   "prefecture": "Tandjoare",
+   "block": [
+    1000,
+    2099
+   ],
+   "point": [
+    0.028779,
+    10.676489
+   ],
+   "machine": "TG-TDJ01-1017-6",
+   "withCheck": "Bagou 10 17-6"
+  },
+  {
+   "text": "Bagou 1 00 17",
+   "area": "TCB0601",
+   "name": "Bagou",
+   "nameId": 268,
+   "prefecture": "Tchamba",
+   "block": [
+    10000,
+    26899
+   ],
+   "point": [
+    1.402314,
+    8.518183
+   ],
+   "machine": "TG-TCB0601-10017-8",
+   "withCheck": "Bagou 1 00 17-8"
+  },
+  {
+   "text": "Avedje 10 17",
+   "area": "AMO03",
+   "name": "Avedje",
+   "nameId": 233,
+   "prefecture": "Amou",
+   "block": [
+    1000,
+    4299
+   ],
+   "point": [
+    1.126148,
+    7.418978
+   ],
+   "machine": "TG-AMO03-1017-8",
+   "withCheck": "Avedje 10 17-8"
+  },
+  {
+   "text": "Avédjé 43 17",
+   "area": "ZIO0205",
+   "name": "Avédjé",
+   "nameId": 233,
+   "prefecture": "Zio",
+   "block": [
+    4300,
+    7699
+   ],
+   "point": [
+    1.237793,
+    6.672846
+   ],
+   "machine": "TG-ZIO0205-4317-2",
+   "withCheck": "Avédjé 43 17-2"
+  },
+  {
+   "text": "Lom-Nava 10 17",
+   "area": "OGO0612",
+   "name": "Lom-nava",
+   "nameId": 802,
+   "prefecture": "Ogou",
+   "block": [
+    1000,
+    1199
+   ],
+   "point": [
+    1.352087,
+    7.394073
+   ],
+   "machine": "TG-OGO0612-1017-8",
+   "withCheck": "Lom-Nava 10 17-8"
+  },
+  {
+   "text": "Lom-Nava 29 17",
+   "area": "MMO0603",
+   "name": "Lom-nava",
+   "nameId": 802,
+   "prefecture": "Moyen-Mono",
+   "block": [
+    2900,
+    5199
+   ],
+   "point": [
+    1.612475,
+    7.054688
+   ],
+   "machine": "TG-MMO0603-2917-4",
+   "withCheck": "Lom-Nava 29 17-4"
+  },
+  {
+   "text": "Lom Nava 52 17",
+   "area": "KLO0108",
+   "name": "Lom Nava",
+   "nameId": 802,
+   "prefecture": "Kloto",
+   "block": [
+    5200,
+    8399
+   ],
+   "point": [
+    0.6385,
+    6.919078
+   ],
+   "machine": "TG-KLO0108-5217-0",
+   "withCheck": "Lom Nava 52 17-0"
+  },
+  {
+   "text": "lom nava 1 76 17",
+   "area": "ZIO1501",
+   "name": "Lom-Nava",
+   "nameId": 802,
+   "prefecture": "Zio",
+   "block": [
+    17600,
+    26699
+   ],
+   "point": [
+    1.240089,
+    6.434438
+   ],
+   "machine": "TG-ZIO1501-17617-1",
+   "withCheck": "lom nava 1 76 17-1"
+  },
+  {
+   "text": "LOMNAVA 1 00 17",
+   "area": "OGO0414",
+   "name": "Lom-Nava",
+   "nameId": 802,
+   "prefecture": "Ogou",
+   "block": [
+    10000,
+    17599
+   ],
+   "point": [
+    1.128392,
+    7.522102
+   ],
+   "machine": "TG-OGO0414-10017-8",
+   "withCheck": "LOMNAVA 1 00 17-8"
+  },
+  {
+   "text": "Djanta Copé 10 17",
+   "area": "HAH0803",
+   "name": "Djanta Copé",
+   "nameId": 561,
+   "prefecture": "Haho",
+   "block": [
+    1000,
+    1999
+   ],
+   "point": [
+    1.162932,
+    7.215597
+   ],
+   "machine": "TG-HAH0803-1017-6",
+   "withCheck": "Djanta Copé 10 17-6"
+  },
+  {
+   "text": "Djanta kopé 20 17",
+   "area": "HAH0507",
+   "name": "Djanta Kopé",
+   "nameId": 561,
+   "prefecture": "Haho",
+   "block": [
+    2000,
+    7399
+   ],
+   "point": [
+    1.27476,
+    7.101858
+   ],
+   "machine": "TG-HAH0507-2017-2",
+   "withCheck": "Djanta kopé 20 17-2"
+  }
+ ],
+ "plateNames": {
+  "fits": [
+   {
+    "name": "Kara",
+    "length": 4,
+    "words": 1,
+    "fits": true
+   },
+   {
+    "name": "Mission-Tové",
+    "length": 12,
+    "words": 2,
+    "fits": true
+   },
+   {
+    "name": "Yiboè Avédzé",
+    "length": 12,
+    "words": 2,
+    "fits": true
+   },
+   {
+    "name": "Lom-Nava",
+    "length": 8,
+    "words": 2,
+    "fits": true
+   },
+   {
+    "name": "N'tare",
+    "length": 6,
+    "words": 1,
+    "fits": true
+   },
+   {
+    "name": "Lassa Samala Haut",
+    "length": 17,
+    "words": 3,
+    "fits": false
+   },
+   {
+    "name": "Koussocointougou",
+    "length": 16,
+    "words": 1,
+    "fits": false
+   },
+   {
+    "name": "Danyi Afiadenyigba",
+    "length": 18,
+    "words": 2,
+    "fits": false
+   },
+   {
+    "name": "Gboto Koissidamé",
+    "length": 16,
+    "words": 2,
+    "fits": false
+   },
+   {
+    "name": "Zongo 1",
+    "length": 7,
+    "words": 2,
+    "fits": false
+   }
+  ],
+  "officialToPlate": [
+   {
+    "area": "YOT0401",
+    "officialName": "Gboto Koissidamé",
+    "plate": "Koissidamé",
+    "rule": "distinctive",
+    "officialTyped": "Gboto Koissidamé 10 17",
+    "remembered": "Koissidamé 10 17",
+    "machine": "TG-YOT0401-1017-4"
+   },
+   {
+    "area": "TON1601",
+    "officialName": "Centre de formation rurale de Tami",
+    "plate": "Tami",
+    "rule": "cleaned",
+    "officialTyped": "Centre de formation rurale de Tami 10 17",
+    "remembered": "Tami 10 17",
+    "machine": "TG-TON1601-1017-2"
+   },
+   {
+    "area": "AGO0803",
+    "officialName": "Agou Yiboè Avédzé",
+    "plate": "Yiboè Avédzé",
+    "rule": "distinctive",
+    "officialTyped": "Agou Yiboè Avédzé 10 17",
+    "remembered": "Yiboè Avédzé 10 17",
+    "machine": "TG-AGO0803-1017-7"
+   },
+   {
+    "area": "ZIO0602",
+    "officialName": "Cité de Djagblé",
+    "plate": "Djagblé",
+    "rule": "cleaned",
+    "officialTyped": "Cité de Djagblé 10 17",
+    "remembered": "Djagblé 10 17",
+    "machine": "TG-ZIO0602-1017-4"
+   },
+   {
+    "area": "OTI0503",
+    "officialName": "Carrefour Angoh Achingou",
+    "plate": "Achingou",
+    "rule": "distinctive",
+    "officialTyped": "Carrefour Angoh Achingou 10 17",
+    "remembered": "Achingou 10 17",
+    "machine": "TG-OTI0503-1017-1"
+   },
+   {
+    "area": "DNY0406",
+    "officialName": "Danyi Afiadenyigba",
+    "plate": "Afiadenyigba",
+    "rule": "distinctive",
+    "officialTyped": "Danyi Afiadenyigba 10 17",
+    "remembered": "Afiadenyigba 10 17",
+    "machine": "TG-DNY0406-1017-9"
+   }
+  ],
+  "collideAfterShortening": [
+   {
+    "text": "Tami 10 17",
+    "area": "TON1601",
+    "officialName": "Centre de formation rurale de Tami",
+    "plate": "Tami",
+    "nameId": 1042,
+    "block": [
+     1000,
+     1699
+    ],
+    "point": [
+     0.061526,
+     10.854986
+    ],
+    "machine": "TG-TON1601-1017-2"
+   },
+   {
+    "text": "Tami 17 17",
+    "area": "TON1605",
+    "officialName": "Tami",
+    "plate": "Tami",
+    "nameId": 1042,
+    "block": [
+     1700,
+     3799
+    ],
+    "point": [
+     0.040118,
+     10.857895
+    ],
+    "machine": "TG-TON1605-1717-4"
+   },
+   {
+    "text": "Nangbéto 10 17",
+    "area": "OGO0104",
+    "officialName": "Nangbéto",
+    "plate": "Nangbéto",
+    "nameId": 880,
+    "block": [
+     1000,
+     1899
+    ],
+    "point": [
+     1.446728,
+     7.408995
+    ],
+    "machine": "TG-OGO0104-1017-3"
+   },
+   {
+    "text": "Nangbéto 19 17",
+    "area": "OGO0105",
+    "officialName": "Nangbéto Cité",
+    "plate": "Nangbéto",
+    "nameId": 880,
+    "block": [
+     1900,
+     3299
+    ],
+    "point": [
+     1.443341,
+     7.411118
+    ],
+    "machine": "TG-OGO0105-1917-8"
+   },
+   {
+    "text": "Datcha 10 17",
+    "area": "OGO0202",
+    "officialName": "Datcha Campment",
+    "plate": "Datcha",
+    "nameId": 364,
+    "block": [
+     1000,
+     2799
+    ],
+    "point": [
+     1.16186,
+     7.442121
+    ],
+    "machine": "TG-OGO0202-1017-8"
+   },
+   {
+    "text": "Datcha 1 00 17",
+    "area": "OGO0201",
+    "officialName": "Datcha",
+    "plate": "Datcha",
+    "nameId": 364,
+    "block": [
+     10000,
+     19299
+    ],
+    "point": [
+     1.160716,
+     7.430872
+    ],
+    "machine": "TG-OGO0201-10017-9"
+   }
+  ],
+  "refused": [
+   {
+    "text": "Centre de formation rurale de Tami 17 17",
+    "error": "no N-Ways address Centre De Formation Rurale De Tami 17 17: that number is in no block of the name 'Centre De Formation Rurale De Tami'"
+   },
+   {
+    "text": "Nangbéto Cité 10 17",
+    "error": "no N-Ways address Nangbeto Cite 10 17: that number is in no block of the name 'Nangbeto Cite'"
+   }
+  ],
+  "provisional": {
+   "area": "KER0606",
+   "officialName": "Koussocointougou",
+   "needsCouncilChoice": true,
+   "remembered": "Koussocointougou 10 00",
+   "machine": "TG-KER0606-1000-4"
+  }
+ }
+}

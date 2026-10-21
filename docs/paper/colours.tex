@@ -1,0 +1,18 @@
+% Togo: five horizontal stripes, green, yellow, green, yellow, green, in that order from the top,
+% with the red canton and its white star over the first three.
+\definecolor{flagA}{HTML}{006A4E}
+\definecolor{flagB}{HTML}{FFCE00}
+\definecolor{flagRed}{HTML}{D21034}
+\definecolor{paperink}{HTML}{006A4E}
+\newcommand{\flagband}{\begin{tikzpicture}[remember picture,overlay]
+  \fill[flagA] (0,0) rectangle (\paperwidth,-1.4mm);
+  \fill[flagB] (0,-1.4mm) rectangle (\paperwidth,-2.8mm);
+  \fill[flagA] (0,-2.8mm) rectangle (\paperwidth,-4.2mm);
+  \fill[flagB] (0,-4.2mm) rectangle (\paperwidth,-5.6mm);
+  \fill[flagA] (0,-5.6mm) rectangle (\paperwidth,-7.0mm);
+  \fill[flagRed] (0,0) rectangle (4.2mm,-4.2mm);
+  \fill[white] (2.1mm,-2.1mm) +(90:1.6mm) -- +(126:0.61mm) -- +(162:1.6mm) -- +(198:0.61mm) -- +(234:1.6mm)
+    -- +(270:0.61mm) -- +(306:1.6mm) -- +(342:0.61mm) -- +(18:1.6mm) -- +(54:0.61mm) -- cycle;
+\end{tikzpicture}}
+\usepackage{iflang}
+\newcommand{\papershort}{\IfLanguageName{french}{Adressage N-Ways pour le Togo}{N-Ways Addressing for Togo}}

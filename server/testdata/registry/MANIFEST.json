@@ -1,0 +1,25 @@
+{
+  "byUnit": {
+    "ANI": 5,
+    "BMO": 5,
+    "CIN": 5,
+    "KPD": 4,
+    "MMO": 5,
+    "PMO": 10072
+  },
+  "codes": 10096,
+  "country": "TG",
+  "credit": "N-Ways Addressing for Togo, © N-WAYS LIMITED (nways.ng)",
+  "engine": "internal/addressing/tg (SPEC v1.0)",
+  "exported": "2026-10-20T16:41:57Z",
+  "licence": "ODbL 1.0 (LICENSE-DATA)",
+  "sha256": {
+    "ANI.csv": "8faca474d7ecf0aa977f5e6cf6f35bb37daaa3dd3a668bb6030b84cc9a9c333e",
+    "BMO.csv": "3cee8571588102fde2c17ef142b87d93ac81b7b5f4397d2664ffba8e4b465fa2",
+    "CIN.csv": "a3a5b03f34e4bbcef34ff479492a7b3b364ac2f67c221d808884f2f321e85699",
+    "KPD.csv": "8d157e1e58e288eb796dfdaab861b528a4bcbd68222382362ccdb807915d0090",
+    "MMO.csv": "2089258ab07e56db6833b872091f4b3e66843bc1a688c6c7402b5f66b7ea3ccd",
+    "PMO.csv": "d81928cc5a0ba667918889e6aa8016a6596d41f587bfa637f9c680e750df0dbb",
+    "areas.csv": "025d94b54b740dfb08c07fa6b12ca7fe91233f35277bce9b6049f65189542d24"
+  }
+}

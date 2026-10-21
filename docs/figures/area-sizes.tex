@@ -1,0 +1,20 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{common}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[width=12cm, height=6.2cm, ybar stacked, bar width=0.22, xmin=0, xmax=4.8, ymin=0, ymax=300, clip=false,
+  xtick={0,1,2,3,4}, xticklabels={1,10,100,{1\,000},{10\,000}}, minor xtick={0.301,0.477,0.602,0.699,0.778,0.845,0.903,0.954,1.301,1.477,1.602,1.699,1.778,1.845,1.903,1.954,2.301,2.477,2.602,2.699,2.778,2.845,2.903,2.954,3.301,3.477,3.602,3.699,3.778,3.845,3.903,3.954,4.301,4.477,4.602},
+  xlabel={\T{compounds in the code area (logarithmic scale)}{concessions dans la zone de code (échelle logarithmique)}},
+  ylabel={\T{code areas}{zones de code}}, ymajorgrids, grid style={grid},
+  axis x line*=bottom, axis y line*=left, enlarge x limits=false,
+  legend style={draw=none, fill=none, at={(0.02,0.97)}, anchor=north west, font=\footnotesize, cells={anchor=west}},
+  legend cell align=left]
+\addplot[fill=ink, draw=none] table[x=logc, y=four] {area-sizes.dat};
+\addplot[fill=gold, draw=none] table[x=logc, y=five] {area-sizes.dat};
+\legend{\T{areas with four-digit numbers}{zones à numéros de quatre chiffres},
+        \T{areas with five-digit numbers}{zones à numéros de cinq chiffres}}
+\coordinate (m0) at (axis cs:3.031,0); \coordinate (m1) at (axis cs:3.031,292);
+\end{axis}
+\draw[white, line width=2.2pt] (m0) -- (m1); \draw[flagred, dashed, line width=1pt] (m0) -- (m1) node[right, font=\scriptsize, flagred] {\T{median: 1,075 compounds}{médiane : 1\,075 concessions}};
+\end{tikzpicture}
+\end{document}

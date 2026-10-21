@@ -1,0 +1,12 @@
+.git
+.github
+docs
+tools
+**/__pycache__
+**/*.pyc
+**/.DS_Store
+server/testdata
+server/.env
+data
+*.sqlite
+*.sqlite-*

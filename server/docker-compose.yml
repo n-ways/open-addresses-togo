@@ -1,0 +1,25 @@
+# N-Ways Addressing for Togo: the whole deployment.
+#
+#   cd server && docker compose up -d
+#
+# The first start imports the registry bundled in the image into the `addresses` volume, then
+# serves the API on port 8080. Settings come from the environment or from server/.env (never
+# commit that file): ISSUE_KEYS stays empty unless this deployment is the designated issuer.
+services:
+  addresses:
+    build:
+      context: ..
+      dockerfile: server/Dockerfile
+    image: n-ways-addresses-tg
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      ISSUE_KEYS: "${ISSUE_KEYS:-}"
+      ISSUE_PER_DAY: "${ISSUE_PER_DAY:-5}"
+      CORS_ORIGINS: "${CORS_ORIGINS:-}"
+    volumes:
+      - addresses:/data
+
+volumes:
+  addresses:

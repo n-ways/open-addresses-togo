@@ -1,0 +1,17 @@
+# N-Ways Addressing for Togo: what you need to install.
+#
+# Python 3.9 or later. The reference engine and its tests
+# (engine/reference/tg_engine.py, plate_names.py, test_tg.py), the registry server (server/)
+# and the tools in tools/ use only Python's standard library: there is no Python package to
+# install, so `pip install -r requirements.txt` installs nothing, by design.
+#
+# Only to rebuild the data from scratch (tools/prepare-inputs.py,
+# tools/extract-buildings.py, tools/assign-areas.py, tools/sort-buildings.py,
+# tools/issue_registry.py, tools/build-register.py, tools/paper-stats.py), not
+# to run the engine or use the codes:
+#   - the DuckDB command-line tool, 1.1 or later, with its spatial extension,
+#     on PATH as `duckdb` (https://duckdb.org/docs/installation; macOS:
+#     brew install duckdb); the tools set its memory limit to 3 GB;
+#   - osmium (https://osmcode.org/osmium-tool/) for the OpenStreetMap exports;
+#   - the map data and places table described in tools/README.md (NWAYS_ROOT,
+#     NWAYS_DB); to use the codes, the published registry/ and model/ are enough.

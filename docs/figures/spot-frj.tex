@@ -1,0 +1,35 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{common}
+\begin{document}
+% Fréau-Jardin's spot frame in cell units (1 cell = 1/32768 degree, about 3.4 m). Origin: 1.2216797 E, 6.1298828 N.
+% Major squares are 20 x 20 cells: their row and column give the first two characters, y then x.
+\def\A{{"2","3","4","5","6","7","8","9","C","F","G","H","J","K","M","P","R","V","W","X"}}
+\begin{tikzpicture}[font=\footnotesize]
+\begin{axis}[name=main, x=0.055cm, y=0.055cm, xmin=0, xmax=200, ymin=0, ymax=120, axis lines=box,
+  xtick={10,30,...,190}, ytick={10,30,...,110}, major tick length=0pt,
+  xticklabels={2,3,4,5,6,7,8,9,C,F}, yticklabels={2,3,4,5,6,7},
+  xlabel={\T{second character (east)}{deuxième caractère (est)}}, ylabel={\T{first character (north)}{premier caractère (nord)}},
+  clip mode=individual]
+\foreach \k in {20,40,...,180} { \edef\t{\noexpand\draw[slate!60, line width=0.4pt] (axis cs:\k,0) -- (axis cs:\k,120);}\t }
+\foreach \k in {20,40,...,100} { \edef\t{\noexpand\draw[slate!60, line width=0.4pt] (axis cs:0,\k) -- (axis cs:200,\k);}\t }
+% the area's own box (the frame is snapped to 1/1024 degree below and to the left of it)
+\draw[ink, line width=0.8pt, dashed] (axis cs:11.8,16.3) rectangle (axis cs:193.7,104.1);
+\fill[gold, opacity=0.35] (axis cs:40,60) rectangle (axis cs:60,80);
+\addplot[only marks, mark=*, mark size=0.9pt, fill=ink, draw=ink] table[x=sx, y=sy] {frj.dat};
+\fill[flagred] (axis cs:56,62) rectangle (axis cs:57,63);
+\draw[flagred, line width=0.6pt] (axis cs:40,60) rectangle (axis cs:60,80);
+\coordinate (zoomA) at (axis cs:60,80); \coordinate (zoomB) at (axis cs:60,60);
+\end{axis}
+% the gold square, magnified: its 20 x 20 cells give the third and fourth characters
+\begin{scope}[shift={($(main.east)+(0.8cm,-1.6cm)$)}]
+  \foreach \i in {0,...,20} { \draw[grid, line width=0.3pt] (\i*0.16,0) -- (\i*0.16,3.2); \draw[grid, line width=0.3pt] (0,\i*0.16) -- (3.2,\i*0.16); }
+  \draw[flagred, line width=0.6pt] (0,0) rectangle (3.2,3.2);
+  \fill[flagred] (16*0.16,2*0.16) rectangle (17*0.16,3*0.16);
+  \node[anchor=north, font=\scriptsize] at (16.5*0.16,-0.02) {R};
+  \node[anchor=east, font=\scriptsize] at (-0.02,2.5*0.16) {4};
+  \node[anchor=south, align=center, font=\footnotesize] at (1.6,3.25) {FRJ-54-4R\\[-1pt]{\scriptsize\T{3.37 m $\times$ 3.38 m}{3,37 m $\times$ 3,38 m}}};
+  \draw[flagred, line width=0.4pt, densely dotted] (zoomA) -- (0,3.2);
+  \draw[flagred, line width=0.4pt, densely dotted] (zoomB) -- (0,0);
+\end{scope}
+\end{tikzpicture}
+\end{document}

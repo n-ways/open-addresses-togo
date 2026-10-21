@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use these addresses, the engine, the server or the paper, please cite them as below."
+title: "N-Ways Addressing for Togo: a code for every compound"
+type: dataset
+authors:
+  - name: "The N-Ways Addressing Group, N-WAYS LIMITED"
+    website: "https://nways.ng"
+    email: "hello@nways.ng"
+date-released: 2026-10-20
+url: "https://github.com/n-ways/open-addresses-togo"
+repository-code: "https://github.com/n-ways/open-addresses-togo"
+license:
+  - ODbL-1.0
+  - Apache-2.0
+  - CC-BY-4.0
+keywords:
+  - addressing
+  - Togo
+  - Lomé
+  - postal address
+  - geocoding
+  - building footprints
+  - Hilbert curve
+  - Damm check digit
+abstract: >-
+  A national address model and registry for Togo: every compound in the country (2,768,053 at issue) has a code made
+  of a place name people already say and a number of four or five digits read in pairs, unique in the whole country on
+  its own. Where the State gives an address (Lomé's streets, the District Autonome du Grand Lomé's entrance addresses
+  once released), it is shown first. The repository holds the full registry, the reference engine, a ready-made
+  registry server and API, and the paper in English and French.
+preferred-citation:
+  type: report
+  title: "A code for every compound: a national addressing model for Togo"
+  authors:
+    - name: "The N-Ways Addressing Group, N-WAYS LIMITED"
+  institution:
+    name: "N-WAYS LIMITED"
+  year: 2026
+  month: 10
+  url: "https://github.com/n-ways/open-addresses-togo"
+  languages:
+    - en
+    - fr

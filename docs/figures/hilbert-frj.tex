@@ -1,0 +1,24 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{common}
+\begin{document}
+\begin{tikzpicture}
+% Fréau-Jardin's frame (1.22204--1.22759 E, 6.13038--6.13306 N, about 614 m by 296 m) in Hilbert-grid units 0..65535.
+\begin{axis}[x=12cm/65535, y=5.8cm/65535, xmin=0, xmax=65535, ymin=0, ymax=65535,
+  axis lines=box, xtick=\empty, ytick=\empty, clip mode=individual,
+  colormap name=togo, point meta min=1000, point meta max=1208,
+  colorbar horizontal, colorbar style={height=2.5mm, xtick={1000,1050,1100,1150,1200},
+    xticklabel style={font=\footnotesize, /pgf/number format/1000 sep={}}, xlabel={\T{number in the area (Fréau-Jardin 1000--1208)}{numéro dans la zone (Fréau-Jardin 1000--1208)}},
+    xlabel style={font=\footnotesize}}]
+% the order-5 Hilbert curve over the same frame, for reference
+\begin{scope}[shift={(axis cs:1024,1024)}, xscale=12/32, yscale=5.8/32]
+  \draw[grid, line width=0.5pt] [l-system={rule set={L -> +RF-LFL-FR+, R -> -LF+RFR+FL-}, axiom=L, order=5, step=1cm, angle=90}] lindenmayer system;
+\end{scope}
+\addplot[slate!70, line width=0.45pt] table[x=hx, y=hy] {frj.dat};
+\addplot[scatter, only marks, mark=*, mark size=1.5pt, scatter src=explicit,
+  scatter/use mapped color={draw=black!50, fill=mapped color}] table[x=hx, y=hy, meta=number] {frj.dat};
+\node[circle, draw=flagred, line width=0.9pt, minimum size=9pt, inner sep=0pt] (c) at (axis cs:16068,34149) {};
+\node[anchor=south west, font=\footnotesize, fill=white, inner sep=1.5pt] at ($(c)+(6pt,6pt)$) {Fréau-Jardin 10 58};
+\node[anchor=north west, font=\scriptsize, slate, fill=white, inner sep=1.5pt] at (axis cs:600,64800) {\T{start of the curve: 1000 at the south-west corner}{début de la courbe : 1000 au coin sud-ouest}};
+\end{axis}
+\end{tikzpicture}
+\end{document}
